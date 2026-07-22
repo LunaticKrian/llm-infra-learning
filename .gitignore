@@ -1,7 +1,16 @@
 .idea
+.claude
 
 # 移除本地模型文件目录
 **/model
 
 # 移除本地数据集文件目录
 **/dataset
+
+# MkDocs 构建产物（由 Cloudflare Pages 自动构建，无需提交）
+site/
+
+# Python 虚拟环境
+.venv
+__pycache__/
+*.pyc
