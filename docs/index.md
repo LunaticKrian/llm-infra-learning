@@ -20,7 +20,7 @@
 
     大模型 API 调用与 Transformers 库核心组件使用。
 
-    [:octicons-arrow-right-24: 查看笔记](01-API-HuggingFace/note.md)
+    [:octicons-arrow-right-24: 查看笔记](LLM/01-API-HuggingFace/note.md)
 
 - :material-brain: **Bert**
 
@@ -28,8 +28,8 @@
 
     Bert 模型的微调训练与下游任务使用。
 
-    [:octicons-arrow-right-24: 训练](02-Bert-Train/note.md) ·
-    [:octicons-arrow-right-24: 使用](03-Bert-Using/note.md)
+    [:octicons-arrow-right-24: 训练](LLM/02-Bert-Train/note.md) ·
+    [:octicons-arrow-right-24: 使用](LLM/03-Bert-Using/note.md)
 
 - :material-robot: **GPT**
 
@@ -37,8 +37,8 @@
 
     GPT 系列模型的训练流程与生成式使用。
 
-    [:octicons-arrow-right-24: 训练](04-GPT-Train/note.md) ·
-    [:octicons-arrow-right-24: 使用](05-GPT-Using/note.md)
+    [:octicons-arrow-right-24: 训练](LLM/04-GPT-Train/note.md) ·
+    [:octicons-arrow-right-24: 使用](LLM/05-GPT-Using/note.md)
 
 - :material-server-network: **部署与微调**
 
@@ -46,8 +46,8 @@
 
     模型服务化部署与 LLaMA-Factory 高效微调。
 
-    [:octicons-arrow-right-24: 部署](06-Model-Deploy/note.md) ·
-    [:octicons-arrow-right-24: 微调](07-LLamaFactory-Finetune/note.md)
+    [:octicons-arrow-right-24: 部署](LLM/06-Model-Deploy/note.md) ·
+    [:octicons-arrow-right-24: 微调](LLM/07-LLamaFactory-Finetune/note.md)
 
 </div>
 

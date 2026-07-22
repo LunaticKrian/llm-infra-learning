@@ -28,9 +28,9 @@ theme:
     - navigation.path          # 面包屑路径
     - navigation.tracking      # URL 随滚动同步当前章节
     # 内容
-    - content.code.copy        # 代码块一键复制
-    - content.code.select      # 代码块可全选
-    - content.code.annotate    # 代码注释
+    - content.codes.copy        # 代码块一键复制
+    - content.codes.select      # 代码块可全选
+    - content.codes.annotate    # 代码注释
     - content.tabs.link        # 内容标签页
     - content.tooltips         # 工具提示
     - content.action.edit      # 编辑此页
@@ -62,21 +62,15 @@ theme:
         name: 切换至浅色模式
 
 # ------------------------------------------------------------
-# 导航结构（对应 docs/ 目录）
+# 导航结构
 # ------------------------------------------------------------
-nav:
-  - 首页: index.md
-  - HuggingFace:
-      - API 与模型使用: 01-API-HuggingFace/note.md
-  - Bert:
-      - 模型微调训练: 02-Bert-Train/note.md
-      - 模型使用: 03-Bert-Using/note.md
-  - GPT:
-      - 模型训练: 04-GPT-Train/note.md
-      - 模型使用: 05-GPT-Using/note.md
-  - 部署与微调:
-      - 模型部署: 06-Model-Deploy/note.md
-      - LLaMA-Factory 微调: 07-LLamaFactory-Finetune/note.md
+# 说明：已改用 awesome-pages 插件按 docs/ 目录层级自动生成嵌套导航，
+# 各级中文标题由对应目录下的 .pages 文件控制。
+# 以后新增文件夹 / 笔记会自动出现在侧边栏，无需手动维护 nav。
+#
+# 若需恢复手动导航，取消下方注释并启用 awesome-pages 时它仍会优先生效：
+# nav:
+#   - 首页: index.md
 
 # ------------------------------------------------------------
 # Markdown 扩展（官方站点同款全套）
@@ -126,6 +120,7 @@ plugins:
       lang:
         - zh
         - en
+  - awesome-pages        # 按 docs/ 目录层级自动生成导航（配合各目录 .pages 文件）
 
 # ------------------------------------------------------------
 # 额外信息（页脚 / 社交链接）
