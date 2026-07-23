@@ -1,100 +1,99 @@
-# LLM 基础设施学习笔记
+# LLM Infrastructure Learning Notes
 
-> 大语言模型（LLM）从 API 调用、微调训练到部署落地的完整学习笔记。
+[🇨🇳 中文版](./assets/README.zh-CN.md)
 
-本项目记录了基于 HuggingFace / Transformers、Bert、GPT、LLaMA-Factory、LlamaIndex 等技术栈的实践过程，涵盖模型加载、训练微调、推理使用与服务化部署全流程。同时使用 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) 将笔记构建为可搜索的静态文档站点。
+> End-to-end notes on Large Language Models (LLMs) — from API calls, fine-tuning, and training all the way to deployment.
+
+This repository documents hands-on practice across the HuggingFace / Transformers, BERT, GPT, LLaMA-Factory, and LlamaIndex stacks, covering the full lifecycle: model loading, training & fine-tuning, inference, and serving. Notes are also built into a searchable static documentation site using [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
 ---
 
-## 📚 内容模块
+## 📚 Content Modules
 
-| 模块 | 说明 |
+| Module | Description |
 | --- | --- |
-| **HuggingFace** | 大模型 API 调用、Transformers 库核心组件使用 |
-| **Bert 训练** | 中文评论分析模型的本地训练与测试 |
-| **Bert 使用** | Bert 下游任务使用 |
-| **GPT 训练** | GPT 模型训练流程（古文 / 歌词 / 对联等） |
-| **GPT 使用** | Transformer 生成式模型使用 |
-| **模型部署** | 模型服务化部署、Ollama 集成 |
-| **LLaMA-Factory 微调** | LoRA 高效微调实践 |
-| **LlamaIndex** | RAG 检索增强、Embedding 模型 |
+| **HuggingFace** | LLM API calls and core components of the Transformers library |
+| **BERT Training** | Local training & testing of a Chinese-review-analysis model |
+| **BERT Usage** | Downstream tasks with BERT |
+| **GPT Training** | GPT model training pipelines (classical Chinese / lyrics / couplets, etc.) |
+| **GPT Usage** | Working with Transformer-based generative models |
+| **Model Deployment** | Model serving & Ollama integration |
+| **LLaMA-Factory Fine-tuning** | Efficient LoRA fine-tuning in practice |
+| **LlamaIndex** | RAG retrieval-augmented generation & embedding models |
 
-> 每个模块目录下包含 `note.md`（笔记正文）与对应 `.py` 实现代码。
+> Each module folder contains a `note.md` (the write-up) along with the corresponding `.py` implementation code.
 
 ---
 
-## 🚀 本地预览
+## 🚀 Local Preview
 
-本项目使用 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) 作为文档引擎。
+This project uses [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) as its documentation engine.
 
 ```bash
-# 1. 安装（建议先创建虚拟环境）
+# 1. Install (create a virtual environment first)
 python3 -m venv .venv && source .venv/bin/activate
 pip install mkdocs-material
 
-# 2. 启动本地预览（热重载）
+# 2. Start the local preview server (hot reload)
 mkdocs serve
-# 浏览器打开 http://127.0.0.1:8000
+# Open http://127.0.0.1:8000 in your browser
 
-# 3. 构建静态站点
-mkdocs build      # 产物输出到 site/
+# 3. Build the static site
+mkdocs build      # Output is written to site/
 ```
 
 ---
 
-## ☁️ 部署（Cloudflare Pages）
+## ☁️ Deployment (Cloudflare)
 
-站点通过 **Cloudflare Pages** 自动构建部署，采用 Git 集成模式：
+The site is built and deployed automatically via **Cloudflare**, using Git integration:
 
 ```
-push 源码到 GitHub  →  Cloudflare 自动拉取  →  云端 mkdocs build  →  自动上线
+push to GitHub  →  Cloudflare pulls source  →  cloud-side mkdocs build  →  auto-publish
 ```
 
-在 Cloudflare Pages 项目中配置：
+Key configuration:
 
-| 配置项 | 值 |
+| Setting | Value |
 | --- | --- |
-| Framework preset | `MkDocs`（或 None） |
+| Framework preset | `MkDocs` (or None) |
 | Build command | `pip install mkdocs-material && mkdocs build` |
 | Build output directory | `site` |
 
-> 本地无需构建，也无需提交 `site/` 目录（已在 `.gitignore` 中忽略）。只提交 `mkdocs.yml` 和 `docs/` 源文件即可。
+> You never need to build locally or commit the `site/` directory (already in `.gitignore`). Just commit `mkdocs.yml` and the `docs/` source files.
 
 ---
 
-## 📁 项目结构
+## 📁 Project Structure
 
 ```text
 .
-├── mkdocs.yml            # 文档站点配置（主题、导航、扩展）
-├── docs/                 # 笔记源文件（Markdown）
-│   ├── index.md          # 站点首页
-│   ├── stylesheets/      # 自定义样式
-│   ├── 01-API-HuggingFace/
-│   ├── 02-Bert-Train/
-│   ├── 03-Bert-Using/
-│   ├── 04-GPT-Train/
-│   ├── 05-GPT-Using/
-│   ├── 06-Model-Deploy/
-│   ├── 07-LLamaFactory-Finetune/
-│   ├── 17-LlamaIndex-Demo/
-│   └── Pytorch/
-├── site/                 # 构建产物（gitignore，不提交）
+├── mkdocs.yml            # Site config (theme, nav, extensions)
+├── docs/                 # Note sources (Markdown)
+│   ├── index.md          # Site home
+│   ├── stylesheets/      # Custom stylesheets
+│   ├── LLM/              # LLM modules (API / Bert / GPT / Deploy / ...)
+│   └── Pytorch/          # PyTorch learning notes
+├── site/                 # Build output (gitignored, not committed)
 └── README.md
 ```
 
 ---
 
-## 📝 写作约定
+## 📝 Writing Conventions
 
-- 新增笔记：在 `docs/` 对应模块目录下创建 `*.md` 文件
-- 如需出现在导航中，在 `mkdocs.yml` 的 `nav:` 中补充条目
-- Markdown 支持提示框（`!!! tip`）、标签页、代码复制、数学公式、Mermaid 图表等（详见 [Material 文档](https://squidfunk.github.io/mkdocs-material/reference/)）
+- **Add a note:** create a `*.md` file under the relevant module folder in `docs/`
+- **Make it appear in navigation:** navigation is auto-generated from the directory tree via the `awesome-pages` plugin; drop a `.pages` file in a folder to set its title and order
+- Markdown supports admonitions (`!!! tip`), tabs, code copy, math, Mermaid diagrams, and more — see the [Material reference](https://squidfunk.github.io/mkdocs-material/reference/)
 
 ---
 
-## 🔗 相关链接
+## 🔗 Related Links
 
-- [MkDocs Material 官方文档](https://squidfunk.github.io/mkdocs-material/)
-- [MkDocs 文档](https://www.mkdocs.org/)
-- [Cloudflare Pages 文档](https://developers.cloudflare.com/pages/)
+- [MkDocs Material Docs](https://squidfunk.github.io/mkdocs-material/)
+- [MkDocs Docs](https://www.mkdocs.org/)
+- [Cloudflare Pages Docs](https://developers.cloudflare.com/pages/)
+
+---
+
+> 🌐 Language: **English** · [切换到中文版](./assets/README.zh-CN.md)
