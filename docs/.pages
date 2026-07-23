@@ -1,4 +1,6 @@
 # 顶级导航顺序：首页在前，再按分组排列
 nav:
-  - index.md      # 首页（LLM 基础设施学习笔记）
+  # - index.md      # 首页（LLM 基础设施学习笔记）
+  - ArticleReading
   - Pytorch       # Pytorch 分组
+  - LLM

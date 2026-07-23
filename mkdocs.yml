@@ -3,7 +3,7 @@
 # 参考: https://squidfunk.github.io/mkdocs-material/
 # ============================================================
 
-site_name: LLM 基础设施学习笔记
+site_name: AI LLM Study NoteBook
 site_url: https://llm-infra-learning.lunatice.workers.dev/
 site_description: 大语言模型从 API 调用、微调训练到部署落地的完整学习笔记
 site_author: krian
@@ -131,7 +131,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/krian
+      link: https://github.com/LunaticKrian
   generator: false             # 关闭底部 "Made with MkDocs" 推广
 
 extra_css:

@@ -1,4 +1,6 @@
 # Pytorch 分组
 title: Pytorch
 nav:
-  - PyTorch Blitz: 260722-PyTorch-Blitz.md
+  - Index: index.md
+  - PyTorch Tensors: 260722-PyTorchBlitz-Tensors.md
+  - PyTorch AutoGrad: 260723-PyTorchBlitz-AutoGrad.md
