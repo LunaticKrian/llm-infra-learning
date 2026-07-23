@@ -4,7 +4,7 @@
 # ============================================================
 
 site_name: LLM 基础设施学习笔记
-site_url: https://llm-infra-learning.pages.dev/
+site_url: https://llm-infra-learning.workers.dev/
 site_description: 大语言模型从 API 调用、微调训练到部署落地的完整学习笔记
 site_author: krian
 
