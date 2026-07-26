@@ -1,0 +1,5 @@
+title: 神经网络
+nav:
+  - Index: index.md
+  - 微积分基础认知: 260726-微积分基础认知.md
+  - 构建 Micrograd: 260725-ZeroToHero-Building-Micrograd.md
